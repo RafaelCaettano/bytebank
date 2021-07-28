@@ -1,0 +1,16 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.list-item {
+    padding: 1rem;
+    border-bottom: .1rem solid $primary-border-color;
+
+    &__title {
+        @include fonts("title-n");
+    }
+
+    &__description {
+        @include fonts("description-paragraph");
+        margin: .1rem 0 0 0;
+    }
+}
