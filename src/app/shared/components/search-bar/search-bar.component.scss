@@ -1,0 +1,29 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.search-bar {
+    @include flex($align: center);
+    padding: .5rem 1rem;
+    background: $primary-bg-color;
+    border-radius: $border-radius-semi-circle;
+
+    &__icon {
+        font-size: 1.5rem;
+        margin: 0 .75rem 0 0;
+    }
+
+    &__input {
+        background: none;
+        border: none;
+        width: 100%;
+        padding: 0;
+
+        @include input-placeholder {
+            @include fonts("text-primary");
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
