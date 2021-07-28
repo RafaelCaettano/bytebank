@@ -1,0 +1,10 @@
+@import '../../../../assets/styles/mixins';
+
+.carousel {
+    @include flex;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
