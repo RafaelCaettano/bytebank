@@ -1,0 +1,12 @@
+<app-card>
+    <div class="redirect-card">
+        <div class="redirect-card__header">
+            <span class="redirect-card__header__title"> {{ title }} </span>
+            <div class="redirect-card__header__ensign" *ngIf="feat"> Novo </div>
+        </div>
+
+        <p class="redirect-card__description"> {{ description }} </p>
+
+        <button class="redirect-card__button"> {{ buttonLabel }} </button>
+    </div>
+</app-card>

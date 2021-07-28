@@ -1,0 +1,26 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.icon-option {
+    @include flex($direction: column, $justify: center, $align: center);
+    margin: 0 .5rem 0 0;
+
+    &__name {
+        @include fonts("text-primary");
+        text-align: center;
+        margin: .5rem 0 0 0;
+    }
+
+    &__icon {
+        @include flex($justify: center, $align: center);
+        background: $primary-bg-color;
+        height: 5rem;
+        width: 5rem;
+        border-radius: $border-radius-circle;
+
+        i {
+            width: auto;
+            font-size: 1.25rem;
+        }
+    }
+}
