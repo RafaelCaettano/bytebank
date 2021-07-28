@@ -1,0 +1,13 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.card-spotlight {
+
+    &__text {
+        @include fonts("text-primary");
+
+        &__spotlight {
+            color: $quaternary-font-color;
+        }
+    }
+}
