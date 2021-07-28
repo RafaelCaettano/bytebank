@@ -1,0 +1,39 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.header {
+    background: $secondary-bg-color;
+    padding: 1rem;
+
+    &__nav {
+        @include flex($justify: space-between, $align: center);
+
+        &__logo {
+            width: 1.75rem;
+        }
+
+        &__links {
+            @include flex($justify: space-between, $align: center);
+            
+            .header__link {
+                text-decoration: none;
+                color: $tertiary-font-color;
+    
+                i {
+                    font-size: 1.5rem;
+                }
+    
+                &+a {
+                    margin: 0 0 0 1rem;
+                }
+            }
+        }
+    }
+
+    &__title {
+        margin: 1.5rem 0 0 0;
+        color: $tertiary-font-color;
+        font-size: $fs-normal;
+        font-weight: 700;
+    }
+}
