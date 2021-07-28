@@ -1,0 +1,15 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.mark {
+    @include flex($align: center);
+
+    &__icon {
+        font-size: 1.5rem;
+        margin: 0 .5rem 0 0;
+    }
+
+    &__text {
+        @include fonts("title-s");
+    }
+}
