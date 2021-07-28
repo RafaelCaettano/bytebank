@@ -1,0 +1,37 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.redirect-card {
+
+    &__header {
+        @include flex($align: center);
+
+        &__title {
+            @include fonts("title-m");
+            margin: 0 .5rem 0 0;
+        }
+
+        &__ensign {
+            background: $secondary-bg-color;
+            color: $tertiary-font-color;
+            font-size: $fs-smal;
+            border-radius: 7px;
+            padding: 0 .5rem;
+        }
+    }
+
+    &__description {
+        @include fonts("text-primary");
+        margin: .75rem 0 0 0;
+    }
+
+    &__button {
+        @include fonts("text-primary-n");
+        background-color: $secondary-bg-color;
+        border-radius: $border-radius;
+        color: $tertiary-font-color;
+        margin: .75rem 0 0 0;
+        padding: .5rem;
+        border: none;
+    }
+}
