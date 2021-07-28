@@ -1,0 +1,13 @@
+<header class="header">
+    <nav class="header__nav">
+        <img class="header__nav__logo" src="../../../../assets/logos/white_byte.svg">
+
+        <div class="header__nav__links">
+            <a class="header__link" *ngFor="let link of links" [routerLink]="link.url">
+                <i [class]="link.icon"></i>
+            </a>
+        </div>
+    </nav>
+
+    <h1 class="header__title">Olá, Rafael</h1>
+</header>
