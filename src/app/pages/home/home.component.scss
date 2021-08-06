@@ -1,0 +1,193 @@
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
+
+.container {
+
+    .account {
+        @include flex($justify: space-between, $align: center);
+        padding: 1.5rem;
+
+        &__title {
+            @include fonts('title-n');
+        }
+
+        &__icon {
+            font-size: 1.5rem;
+        }
+    }
+
+    .fast-feats {
+
+        &__title {
+            padding: 0 1.5rem;
+            @include fonts('title-l');
+        }
+
+        &__feats {
+            margin: 1.5rem 0;
+
+            app-carousel {
+
+                app-icon-option {
+
+                    &:first-child {
+                        margin: 0 0 0 1.5rem;
+                    }
+            
+                    &:last-child {
+                        margin: 0 1rem 0 0;
+                    }
+                }
+            }
+        }
+
+        &__cards {
+            padding: 0 1.5rem;
+        }
+
+        &__infos {
+            margin: 1.5rem 0;
+
+            app-carousel {
+
+                app-spotlight-card {
+                    min-width: 300px;
+
+                    &+app-spotlight-card {
+                        margin: 0 0 0 .5rem;
+                    }
+
+                    &:first-child {
+                        margin: 0 0 0 1.5rem;
+                    }
+            
+                    &:last-child {
+                        margin-right: 1.5rem !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .card {
+        border-top: .145rem solid $primary-border-color;
+        padding: 1.5rem;
+
+        &__icon {
+            font-size: 1.5rem;
+        }
+
+        &__go-to-page {
+            @include flex($justify: space-between, $align: center);
+
+            &__icon {
+                font-size: 1.5rem
+            }
+
+            &__title {
+                @include fonts('title-n');
+                margin: .5rem 0 0 0;
+            }
+        }
+
+        &__infos {
+            margin: 1rem 0;
+
+            &__paragraph {
+                @include fonts('description-paragraph');
+            }
+
+            &__title {
+                @include fonts('title-m');
+                margin: .5rem 0;
+            }
+        }
+    }
+
+    .lending {
+        border-top: .145rem solid $primary-border-color;
+        padding: 1.5rem;
+
+        &__icon {
+            font-size: 1.5rem;
+        }
+
+        &__go-to-page {
+            @include flex($justify: space-between, $align: center);
+
+            &__icon {
+                font-size: 1.5rem
+            }
+
+            &__title {
+                @include fonts('title-n');
+                margin: .5rem 0 0 0;
+            }
+        }
+
+        &__infos {
+            margin: .5rem 0;
+
+            &__paragraph {
+                @include fonts('description-paragraph');
+            }
+        }
+    }
+
+    .life-insurance {
+        border-top: .145rem solid $primary-border-color;
+        padding: 1.5rem;
+
+        &__icon {
+            font-size: 1.5rem;
+        }
+
+        &__go-to-page {
+            @include flex($justify: space-between, $align: center);
+
+            &__icon {
+                font-size: 1.5rem
+            }
+
+            &__title {
+                @include fonts('title-n');
+                margin: .5rem 0 0 0;
+            }
+        }
+
+        &__paragraph {
+            @include fonts('description-paragraph');
+        }
+    }
+
+    .discover {
+        border-top: .145rem solid $primary-border-color;
+        padding: 1.5rem 0;
+
+        &__title {
+            @include fonts('title-n');
+            margin: 0 0 .5rem 1.5rem;
+        }
+
+        &__itens {
+            app-carousel {
+
+                app-redirect-card {
+                    min-width: 300px;
+
+                    &+app-redirect-card {
+                        margin: 0 0 0 .5rem;
+                    }
+
+                    &:first-child {
+                        margin: 0 0 0 1.5rem;
+                    }
+            
+                    &:last-child {
+                        margin-right: 1.5rem !important;
+                    }
+                }
+            }
+        }
+    }
+}
