@@ -7,20 +7,21 @@
 
     &__name {
         @include fonts("text-primary");
-        text-align: center;
         margin: .5rem 0 0 0;
+        text-align: center;
+        font-size: $fs-xsmal;
     }
 
     &__icon {
         @include flex($justify: center, $align: center);
         background: $primary-bg-color;
-        height: 5rem;
-        width: 5rem;
+        height: 4rem;
+        width: 4rem;
         border-radius: $border-radius-circle;
 
         i {
             width: auto;
-            font-size: 1.25rem;
+            font-size: 1rem;
         }
     }
 }
