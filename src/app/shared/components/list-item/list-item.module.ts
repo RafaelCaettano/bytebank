@@ -12,6 +12,9 @@ import { ListItemComponent } from './list-item.component';
   imports: [
     CommonModule,
     ListItemRoutingModule
+  ], 
+  exports: [
+    ListItemComponent
   ]
 })
 export class ListItemModule { }
