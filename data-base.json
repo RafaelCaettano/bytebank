@@ -1,0 +1,11 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Rafael Caetano do Carmo",
+            "agencia": "000001-0",
+            "conta": "0000000-00",
+            "saldo": 1000.00
+        }
+    ]
+}
