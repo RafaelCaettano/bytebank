@@ -126,7 +126,7 @@
         }
 
         &__infos {
-            margin: .5rem 0;
+            margin: .5rem 0 0 0;
 
             &__paragraph {
                 @include fonts('description-paragraph');
@@ -156,6 +156,7 @@
         }
 
         &__paragraph {
+            margin: .5rem 0 0 0;
             @include fonts('description-paragraph');
         }
     }
