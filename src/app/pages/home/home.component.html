@@ -5,7 +5,7 @@
     </div>
 
     <div class="fast-feats">
-        <h3 class="fast-feats__title">R$ 1000,00</h3>
+        <h3 class="fast-feats__title"> {{ user.saldo | currencyBrl }} </h3>
 
         <div class="fast-feats__feats">
             <app-carousel>
@@ -34,7 +34,7 @@
 
         <div class="card__infos">
             <p class="card__infos__paragraph">Fatura atual</p>
-            <h3 class="card__infos__title">R$ 293,00</h3>
+            <h3 class="card__infos__title"> {{ user.fatura | currencyBrl }} </h3>
             <p class="card__infos__paragraph">Limite disponível R$ 100.763,00</p>
         </div>
 
@@ -53,7 +53,7 @@
 
         <div class="lending__infos">
             <p class="lending__infos__paragraph">Valor disponível de até</p>
-            <p class="lending__infos__paragraph">R$ 100.000,00</p>
+            <p class="lending__infos__paragraph"> {{ user.emprestimo | currencyBrl }} </p>
         </div>
     </div>
 

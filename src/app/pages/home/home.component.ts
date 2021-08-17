@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/shared/models/user.model';
+import { UserService } from 'src/app/shared/services/user/user.service';
 
 @Component({
   selector: 'app-home',
@@ -28,9 +30,26 @@ export class HomeComponent implements OnInit {
     { title: "WhatsApp", description: "Pagamentos seguros, rápidos e sem tarifa. A experoência Bytebank sem nem sair da conversa.", buttonLabel: "Quero conhecer", feat: true }
   ];
 
-  constructor() { }
+  user: User = {
+    name: '',
+    saldo: 0,
+    id: 0,
+    agencia: '',
+    conta: '',
+    fatura: 0,
+    emprestimo: 0,
+    cartoes: []
+  };
+
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.userService.getUser(1).subscribe(
+      (user: User) => {
+        console.log('USER', user);
+        this.user = user;
+      }
+    )
   }
 
 }

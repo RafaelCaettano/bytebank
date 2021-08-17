@@ -8,11 +8,13 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { CurrencyBrlPipe } from 'src/app/shared/pipes/currency-brl/currency-brl.pipe';
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    CurrencyBrlPipe
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,7 @@ import { HomeComponent } from './home.component';
     RedirectCardModule,
     MarkModule,
     IconOptionModule,
-    SpotlightCardModule
+    SpotlightCardModule,
   ],
   exports: [
     HomeComponent
