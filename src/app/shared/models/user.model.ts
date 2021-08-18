@@ -8,5 +8,6 @@ export interface User {
     saldo: number;
     emprestimo: number;
     fatura: number;
+    limite: number;
     cartoes: Cartao[];
 }
