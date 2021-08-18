@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
     agencia: '',
     conta: '',
     fatura: 0,
+    limite: 0,
     emprestimo: 0,
     cartoes: []
   };
