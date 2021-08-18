@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
 import { User } from 'src/app/shared/models/user.model';
 import { UserService } from 'src/app/shared/services/user/user.service';
 
@@ -41,15 +42,15 @@ export class HomeComponent implements OnInit {
     cartoes: []
   };
 
-  constructor(private userService: UserService) { }
+  constructor(private userStore: Store<{ user: User }>) { }
 
   ngOnInit(): void {
-    this.userService.getUser(1).subscribe(
+    this.userStore.pipe(select('user')).subscribe(
       (user: User) => {
         console.log('USER', user);
         this.user = user;
       }
-    )
+    )    
   }
 
 }
