@@ -74,4 +74,9 @@
         color: $secondary-font-color;
         font-size: $fs-smal;
     }
+
+    @if $style == "description-paragraph-xs" {
+        color: $secondary-font-color;
+        font-size: $fs-xsmal;
+    }
 }
