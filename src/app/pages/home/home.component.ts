@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
+import { USER } from 'src/app/shared/consts/models.initializer';
 import { User } from 'src/app/shared/models/user.model';
-import { UserService } from 'src/app/shared/services/user/user.service';
+import { Start, Stop } from 'src/app/shared/state/actions/loading.action';
 
 @Component({
   selector: 'app-home',
@@ -31,27 +32,24 @@ export class HomeComponent implements OnInit {
     { title: "WhatsApp", description: "Pagamentos seguros, rápidos e sem tarifa. A experoência Bytebank sem nem sair da conversa.", buttonLabel: "Quero conhecer", feat: true }
   ];
 
-  user: User = {
-    name: '',
-    saldo: 0,
-    id: 0,
-    agencia: '',
-    conta: '',
-    fatura: 0,
-    limite: 0,
-    emprestimo: 0,
-    cartoes: []
-  };
+  user: User = USER;
 
-  constructor(private userStore: Store<{ user: User }>) { }
+  constructor(
+    private userStore: Store<{ user: User }>,
+    private loadingStore: Store<{ loading: boolean }>
+  ) { }
 
   ngOnInit(): void {
+    this.getUser();
+  }
+
+  getUser(): void {
     this.userStore.pipe(select('user')).subscribe(
-      (user: User) => {
-        console.log('USER', user);
-        this.user = user;
+      (state: User) => {
+        this.user = state;
+        console.log('USER', this.user);
       }
-    )    
+    ); 
   }
 
 }
