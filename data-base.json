@@ -1,0 +1,26 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Rafael Caetano do Carmo",
+            "agencia": "000001-0",
+            "conta": "0000000-00",
+            "saldo": 1000.00,
+            "emprestimo": 25000,
+            "limite": 10000,
+            "fatura": 500,
+            "cartoes": [
+                {
+                    "numero": "5437116716721770",
+                    "validade": "17/12/2022",
+                    "codigo_seguranca": "558"
+                },
+                {
+                    "numero": "5384139514286286",
+                    "validade": "17/04/2023",
+                    "codigo-seguranca": "715"
+                }
+            ]
+        }
+    ]
+}

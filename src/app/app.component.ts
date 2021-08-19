@@ -9,7 +9,7 @@ import { map, filter } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
 
-  showHeader: boolean = true;
+  showHeader: boolean = false;
 
   constructor(private router: Router) {}
 
