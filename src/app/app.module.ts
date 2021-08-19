@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './shared/state/state.index';
+import { LoadingModule } from './shared/components/loading/loading.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { reducers } from './shared/state/state.index';
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
+    LoadingModule,
     HttpClientModule,
     StoreModule.forRoot(reducers)
   ],
