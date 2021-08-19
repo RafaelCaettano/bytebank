@@ -15,6 +15,11 @@ const routes: Routes = [
     resolve: {
       user: HomeResolver
     }
+	},
+  { 
+    path: 'help', 
+    loadChildren: () => import('./pages/help/help.module').then(m => m.HelpModule),
+    data: { showHeader: false }
   }
 ];
 

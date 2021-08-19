@@ -1,17 +1,9 @@
 import { createReducer, Action, on } from "@ngrx/store";
 import * as UserActions from '../actions/user.action'
 import { User } from "../../models/user.model";
+import { USER } from "../../consts/models.initializer";
 
-export const initialState: User = {
-    name: '',
-    saldo: 0,
-    id: 0,
-    agencia: '',
-    conta: '',
-    fatura: 0,
-    emprestimo: 0,
-    cartoes: []
-}
+export const initialState: User = USER;
 
 const _userReducer = createReducer(
     initialState,
