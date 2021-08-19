@@ -10,6 +10,7 @@ export const initialState: User = {
     conta: '',
     fatura: 0,
     emprestimo: 0,
+    limite: 0,
     cartoes: []
 }
 
