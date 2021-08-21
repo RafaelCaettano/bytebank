@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Information } from 'src/app/shared/models/information.model';
 
 @Component({
   selector: 'app-help',
@@ -7,85 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelpComponent implements OnInit {
 
-  itens: Item[] = [
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-    {
-      title: 'Open Banking',
-      description: 'Saiba mais sobre o Open Banking'
-    },
-  ]
+  informations: Information[] = [];
 
-  constructor() { }
+  constructor(
+    private informationsStore: Store<{ informations: Information[] }>,
+    private loadingStore: Store<{ loading: boolean }>
+  ) { }
 
   ngOnInit(): void {
+    this.getInformations();
   }
 
-}
+  getInformations(): void {
+    this.informationsStore.pipe(select('informations')).subscribe(
+      (state: Information[]) => {
+        this.informations = state;
+        console.log('INFORMATIONS', this.informations);
+      }
+    ); 
+  }
 
-interface Item {
-  title: string;
-  description: string;
 }

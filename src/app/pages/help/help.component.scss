@@ -12,6 +12,7 @@
         padding: 1rem;
         position: fixed;
         background: $tertiary-bg-color;
+        top: 0;
 
         &__close {
             @include flex($align: center);
