@@ -4,7 +4,7 @@ import { Information } from "../../models/information.model";
 
 export const initialState: Information[] = [];
 
-const _informationReducer = createReducer(
+const _informationsReducer = createReducer(
     initialState,
     on(InformationsActions.Add, 
         (state, { payload }) => {
@@ -21,6 +21,6 @@ const _informationReducer = createReducer(
     ),
 );
 
-export function informationReducer(state: Information[] | undefined, action: Action) {
-    return _informationReducer(state, action);
+export function informationsReducer(state: Information[] | undefined, action: Action) {
+    return _informationsReducer(state, action);
 }
