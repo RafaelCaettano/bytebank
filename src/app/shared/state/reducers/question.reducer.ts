@@ -1,5 +1,5 @@
 import { createReducer, Action, on } from "@ngrx/store";
-import * as InformationActions from '../actions/information.action'
+import * as InformationActions from '../actions/question.action'
 import { Information } from "../../models/information.model";
 
 export const initialState: Information = {
@@ -9,17 +9,17 @@ export const initialState: Information = {
     description: ''
 };
 
-const _informationReducer = createReducer(
+const _questionReducer = createReducer(
     initialState,
     on(InformationActions.Add, 
         (state, { payload }) => {
             state = payload;
-            console.log('INFORMATIONS STATE', state);
+            console.log('QUESTION STATE', state);
             return state;
         }
     )
 );
 
-export function informationReducer(state: Information | undefined, action: Action) {
-    return _informationReducer(state, action);
+export function questionReducer(state: Information | undefined, action: Action) {
+    return _questionReducer(state, action);
 }
