@@ -1,0 +1,19 @@
+<section class="container">
+    <div class="header">
+        <button class="header__back" (click)="navigateBack()">
+            <i class="ri-arrow-left-s-line"></i>
+        </button>
+        <h2 class="header__title"> {{ information.title }} </h2>
+        <button class="header__search">
+            <i class="ri-search-line"></i>
+        </button>
+    </div>
+
+    <div class="content">
+        <app-list-item *ngFor="let question of information.questions" 
+            [title]="question.title"
+            [description]="question.text"
+            (click)="navigateToExplanation(question)"></app-list-item> 
+    </div>
+
+</section>

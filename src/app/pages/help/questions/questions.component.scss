@@ -1,0 +1,44 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.container {
+    padding: 1rem 0;
+
+    .header {
+        @include flex($align: center, $justify: space-between);
+        padding: 1rem;
+        background: $tertiary-bg-color;
+        position: fixed;
+        width: 91%;
+        top: 0;
+
+        &__back, &__search {
+            @include flex($align: center, $justify: center);
+            background: none;
+            border: none;
+            padding: 0;
+
+            i {
+                font-size: 1.5rem;
+                color: $secondary-font-color;
+            }
+        }
+
+        &__title {
+            @include flex($align: center, $justify: center);
+            @include fonts("title-n");
+        }
+
+        &__search {
+
+            i {
+                font-size: 1.25rem;
+                color: $secondary-font-color;
+            }
+        }
+    }
+
+    .content {
+        padding: 30px 0 0 0;
+    }
+}
