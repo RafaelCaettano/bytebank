@@ -1,0 +1,28 @@
+<section class="container">
+
+    <div class="header">
+        <button class="header__close">
+            <i class="ri-close-line"></i>
+        </button>
+
+        <h1 class="header__title"> Me ajuda </h1>
+
+        <div class="header__searchbar">
+            <app-search-bar label="Qual é sua dúvida?"></app-search-bar>
+        </div>
+    </div>
+
+    <div class="content">
+        <app-list-item *ngFor="let information of informations" 
+            [title]="information.title"
+            [description]="information.description"></app-list-item>
+    </div>
+
+    <div class="footer">
+        <button class="footer__button">
+            <i class="ri-message-2-line"></i>
+            Converse com a gente
+        </button>
+    </div>
+
+</section>
