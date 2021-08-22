@@ -15,7 +15,9 @@
     <div class="content">
         <app-list-item *ngFor="let information of informations" 
             [title]="information.title"
-            [description]="information.description"></app-list-item>
+            [description]="information.description"
+            (click)="navigateToQuestions(information)">
+        </app-list-item>
     </div>
 
     <div class="footer">

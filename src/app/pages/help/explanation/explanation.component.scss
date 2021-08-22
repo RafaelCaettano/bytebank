@@ -2,17 +2,14 @@
 @import '../../../../assets/styles/mixins';
 
 .container {
-    padding: 1rem 0;
+    padding: 1rem;
 
     .header {
         @include flex($align: center, $justify: space-between);
-        padding: 1rem;
         background: $tertiary-bg-color;
-        position: fixed;
-        width: 91%;
-        top: 0;
+        width: 100%;
 
-        &__back, &__search {
+        &__back, &__share {
             @include flex($align: center, $justify: center);
             background: none;
             border: none;
@@ -27,9 +24,10 @@
         &__title {
             @include flex($align: center, $justify: center);
             @include fonts("title-n");
+            padding: 0 1rem;
         }
 
-        &__search {
+        &__share {
 
             i {
                 font-size: 1.25rem;
@@ -40,5 +38,15 @@
 
     .content {
         padding: 30px 0 0 0;
+
+        &__title {
+            @include fonts("title-n");
+        }
+
+        &__text {
+            @include fonts("text-primary");
+            white-space: pre-line;
+            margin: 1rem 0 0 0;
+        }
     }
 }

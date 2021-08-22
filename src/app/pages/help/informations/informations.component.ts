@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Information } from 'src/app/shared/models/information.model';
+import { Add } from 'src/app/shared/state/actions/question.action';
 
 @Component({
   selector: 'app-informations',
@@ -13,7 +15,8 @@ export class InformationsComponent implements OnInit {
 
   constructor(
     private informationsStore: Store<{ informations: Information[] }>,
-    private loadingStore: Store<{ loading: boolean }>
+    private questionStore: Store<{ question: Information }>,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -24,9 +27,14 @@ export class InformationsComponent implements OnInit {
     this.informationsStore.pipe(select('informations')).subscribe(
       (state: Information[]) => {
         this.informations = state;
-        console.log('INFORMATIONS', this.informations);
+        console.log('GET INFORMATIONS', this.informations);
       }
     ); 
+  }
+
+  navigateToQuestions(information: Information): void {
+    this.questionStore.dispatch(Add({ payload: information }));
+    this.router.navigate(['help/questions']);
   }
 
 }

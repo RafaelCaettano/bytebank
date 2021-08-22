@@ -1,0 +1,19 @@
+<section class="container">
+    <div class="header">
+        <button class="header__back" (click)="navigateBack()">
+            <i class="ri-arrow-left-s-line"></i>
+        </button>
+
+        <h2 class="header__title"> {{ information.title }} </h2> 
+
+        <button class="header__share">
+            <i class="ri-share-line"></i>
+        </button>
+    </div>
+
+    <div class="content">
+        <h3 class="content__title"> {{ question?.title }} </h3>
+
+        <p class="content__text"> {{ question?.text }} </p>
+    </div>
+</section>

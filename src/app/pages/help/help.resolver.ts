@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Information } from 'src/app/shared/models/information.model';
 import { InformationsService } from 'src/app/shared/services/informations/informations.service';
 import { Add } from 'src/app/shared/state/actions/informations.action';
@@ -18,12 +18,24 @@ export class HelpResolver implements Resolve<void> {
   ) {}
 
   resolve(): void {
-    this.loadingStore.dispatch(Start());
-    this.informationsService.getInformations().subscribe(
-      (informations: Information[]) => {
-        this.informationsStore.dispatch(Add({ payload: informations }));
-        this.loadingStore.dispatch(Stop());
+    this.informationsStore.pipe(select('informations')).subscribe(
+      (state: Information[]) => {
+        if(state.length == 0) {
+
+          this.loadingStore.dispatch(Start());
+
+          this.informationsService.getInformations().subscribe(
+            (informations: Information[]) => {
+
+              this.informationsStore.dispatch(Add({ payload: informations }));
+              this.loadingStore.dispatch(Stop());
+              
+            }
+          );
+
+        }
       }
-    );
+    )
+    
   }
 }
