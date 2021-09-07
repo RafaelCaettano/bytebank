@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { Information } from 'src/app/shared/models/information.model';
 import { select, Store } from '@ngrx/store';
 import { Question } from 'src/app/shared/models/question.model';
@@ -19,6 +19,7 @@ export class ExplanationComponent implements OnInit {
   }
 
   question: Question | undefined = {
+    id: 0,
     title: '',
     text: ''
   }
@@ -36,9 +37,12 @@ export class ExplanationComponent implements OnInit {
   getQuestion(): void {
     this.questionStore.pipe(select('question')).subscribe(
       (state: Information) => {
-        let title: string = `${this.route.snapshot.paramMap.get('title')}`;
-        this.question = state.questions.find(x => x.title == title);
+        const routeParams: ParamMap = this.route.snapshot.paramMap;
+        const questionId: number = Number(routeParams.get('questionId'));
+
+        this.question = state.questions.find(x => x.id == questionId);
         this.information = state;
+        
         console.log('GET QUESTION', this.question);
       }
     );

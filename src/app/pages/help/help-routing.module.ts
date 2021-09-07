@@ -19,7 +19,7 @@ const routes: Routes = [
         component: QuestionsComponent,
       },
       {
-        path: 'explanation', 
+        path: 'explanation/:questionId', 
         component: ExplanationComponent,
       }
     ]

@@ -41,6 +41,6 @@ export class QuestionsComponent implements OnInit {
   }
 
   navigateToExplanation(question: Question): void {
-    this.router.navigate(['help/explanation', { title: question.title }]);
+    this.router.navigate(['help/explanation', question.id]);
   }
 }
