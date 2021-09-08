@@ -6,11 +6,12 @@
     border-bottom: .1rem solid $primary-border-color;
 
     &__title {
-        @include fonts("title-n");
+        @include fonts("title-s");
     }
 
     &__description {
-        @include fonts("description-paragraph");
+        @include fonts("description-paragraph-xs");
+        @include truncate(100%);
         margin: .1rem 0 0 0;
     }
 }

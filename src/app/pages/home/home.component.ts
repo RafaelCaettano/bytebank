@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
-import { USER } from 'src/app/shared/consts/models.initializer';
 import { User } from 'src/app/shared/models/user.model';
-import { Start, Stop } from 'src/app/shared/state/actions/loading.action';
 
 @Component({
   selector: 'app-home',
@@ -32,7 +30,7 @@ export class HomeComponent implements OnInit {
     { title: "WhatsApp", description: "Pagamentos seguros, rápidos e sem tarifa. A experoência Bytebank sem nem sair da conversa.", buttonLabel: "Quero conhecer", feat: true }
   ];
 
-  user: User = USER;
+  user: User;
 
   constructor(
     private userStore: Store<{ user: User }>,
